@@ -1,5 +1,17 @@
-[gd_scene format=3 uid="uid://datwny6fgu14h"]
+[gd_scene load_steps=4 format=3 uid="uid://datwny6fgu14h"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_4g650"]
+[ext_resource type="PackedScene" uid="uid://cstdhge8clb4" path="res://Balance.tscn" id="1_8lgrm"]
+[ext_resource type="PackedScene" uid="uid://bx4fu3a3x1hcu" path="res://Bet_amount.tscn" id="2_vm3s6"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_4g650")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Node2D" parent="." instance=ExtResource("2_vm3s6")]
+position = Vector2(552, 359)
+
+[node name="Node2D2" parent="." instance=ExtResource("1_8lgrm")]
+offset_left = 116.0
+offset_top = 53.0
+offset_right = 171.0
+offset_bottom = 79.0

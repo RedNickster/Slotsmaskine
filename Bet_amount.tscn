@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx4fu3a3x1hcu"]
+
+[ext_resource type="Texture2D" uid="uid://bomemh5fdi6at" path="res://rectangle.png" id="2_kwhya"]
+[ext_resource type="Texture2D" uid="uid://cj2pjt4frka5u" path="res://arrow.png" id="3_76adq"]
+[ext_resource type="Script" path="res://BetMængde.cs" id="4_wo2vg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rektangel" type="Sprite2D" parent="."]
+position = Vector2(23.04, 5)
+scale = Vector2(0.0578333, 0.0516667)
+texture = ExtResource("2_kwhya")
+
+[node name="ButtonNed" type="Button" parent="."]
+offset_left = -9.0
+offset_top = -8.065
+offset_right = 319.0
+offset_bottom = 319.935
+rotation = 1.5708
+scale = Vector2(0.115, 0.115)
+icon = ExtResource("3_76adq")
+
+[node name="ButtonOp" type="Button" parent="."]
+offset_left = 56.365
+offset_top = 30.095
+offset_right = 384.365
+offset_bottom = 358.095
+rotation = 4.71239
+scale = Vector2(0.115, 0.115)
+icon = ExtResource("3_76adq")
+
+[node name="BetMængde" type="Label" parent="."]
+offset_right = 46.0
+offset_bottom = 26.0
+text = "200"
+horizontal_alignment = 1
+script = ExtResource("4_wo2vg")
+
+[connection signal="pressed" from="ButtonNed" to="BetMængde" method="_on_button_ned_pressed"]
+[connection signal="pressed" from="ButtonOp" to="BetMængde" method="_on_button_op_pressed"]
