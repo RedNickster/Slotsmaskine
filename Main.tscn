@@ -8,22 +8,22 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4g650")
 
-[node name="Node2D" parent="." instance=ExtResource("2_vm3s6")]
-offset_left = 552.0
-offset_top = 359.0
-offset_right = 599.0
-offset_bottom = 385.0
-
-[node name="Node2D2" parent="." instance=ExtResource("1_8lgrm")]
-offset_left = 116.0
-offset_top = 53.0
-offset_right = 171.0
-offset_bottom = 79.0
-
 [node name="Spin" parent="." instance=ExtResource("4_8mscc")]
 offset_left = 157.0
 offset_top = 431.0
 offset_right = 295.0
 offset_bottom = 532.0
+
+[node name="Betmængde" parent="." instance=ExtResource("2_vm3s6")]
+offset_left = 525.0
+offset_top = 426.0
+offset_right = 572.0
+offset_bottom = 452.0
+
+[node name="Node2D" parent="." instance=ExtResource("1_8lgrm")]
+offset_left = 195.0
+offset_top = 122.0
+offset_right = 250.0
+offset_bottom = 148.0
 
 [connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]

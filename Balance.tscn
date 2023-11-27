@@ -1,4 +1,4 @@
 [gd_scene format=3 uid="uid://cstdhge8clb4"]
 
 [node name="Node2D" type="Label"]
-text = "100000"
+text = "600"

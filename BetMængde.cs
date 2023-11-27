@@ -3,11 +3,13 @@ using System;
 
 public partial class BetMængde : Label
 {
-	private Main main;
+	public int checkBet()
+	{
+		return 1010101010;
+	}
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		main = GetNode<Main>("/root/Main");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
