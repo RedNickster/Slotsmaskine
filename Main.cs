@@ -32,10 +32,12 @@ public partial class Main : Node2D
 		if (int.Parse(Balance.Text) >= int.Parse(betMængde.Text)) // Hvis balance er større eller lig med betmængde
 		{
 			GD.Print("Du har nok penge til at spille"); // GD.Print at du har nok penge til at spille
+			// eventuelt return true
 		}
 		else if (int.Parse(Balance.Text) < int.Parse(betMængde.Text)) // Hvis balance er mindre end betmængde
 		{
 			GD.Print("Du har ikke nok penge til at spille"); // GD.Print at du ikke har nok penge til at spille
+			// eventuelt return false
 		}
 	}
 
