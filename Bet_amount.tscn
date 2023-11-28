@@ -17,6 +17,7 @@ scale = Vector2(0.0578333, 0.0516667)
 texture = ExtResource("2_kwhya")
 
 [node name="ButtonNed" type="Button" parent="."]
+layout_mode = 0
 offset_left = -9.0
 offset_top = -8.065
 offset_right = 319.0
@@ -26,6 +27,7 @@ scale = Vector2(0.115, 0.115)
 icon = ExtResource("3_76adq")
 
 [node name="ButtonOp" type="Button" parent="."]
+layout_mode = 0
 offset_left = 56.365
 offset_top = 30.095
 offset_right = 384.365
