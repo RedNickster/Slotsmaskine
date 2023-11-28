@@ -12,6 +12,7 @@ public partial class Main : Node2D
 	{
 		betMængde = GetNode<BetMængde>("Betmængde"); // Henter værdien fra betmængde noden
 		Balance = GetNode<Label>("Node2D"); // Gør så vi kan 
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,7 +22,7 @@ public partial class Main : Node2D
 
 	public void _on_spin_pressed()
 	{
-		GD.Print("!!!!!SPIIINNNN!!!!!");
+		GD.Print("!!!!SPIIINNNN!!!!!");
 		
 		GD.Print("Din balance er: "+Balance.Text); // GD.Print værdien fra balance
 		GD.Print("Din betmængde er: "+betMængde.Text); // GD.Print værdien fra Betmængde
