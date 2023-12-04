@@ -28,6 +28,7 @@ public partial class BetMængde : Label
 		// en if sætning der sørger for at når knappen op bliver trykket på så bliver der lagt 100 til betmængde
 		if (int.Parse(Text) != 1000){
 		Text = (int.Parse(Text) + 100).ToString(); // laver text om til en int og lægger 100 til og laver det om til en string igen
+		// pls sig at deat her hjælper
 		}
 	}
 }
