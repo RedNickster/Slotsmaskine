@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cstdhge8clb4"]
-
-[ext_resource type="Script" path="res://Balance.cs" id="1_ktqm1"]
+[gd_scene format=3 uid="uid://cstdhge8clb4"]
 
 [node name="Node2D" type="Label"]
-text = "100000"
-script = ExtResource("1_ktqm1")
+text = "600"
