@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bksfc1ak81j3u"]
+
+[ext_resource type="Texture2D" uid="uid://b2ijch2q555xx" path="res://icon.svg" id="1_4lf40"]
+[ext_resource type="Script" path="res://cards.cs" id="1_lt4gc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iuuc"]
+size = Vector2(68, 68)
+
+[node name="Cards" type="CharacterBody2D"]
+position = Vector2(7, 4)
+script = ExtResource("1_lt4gc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, 35)
+shape = SubResource("RectangleShape2D_8iuuc")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.617187, 0.613281)
+texture = ExtResource("1_4lf40")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(35, 36)
+scale = Vector2(0.539062, 0.546875)
+texture = ExtResource("1_4lf40")
