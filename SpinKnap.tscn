@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bdm76mmdn40q7"]
+
+[node name="Spin" type="Button"]
+offset_right = 138.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0.886275, 0.533333, 1)
+theme_override_font_sizes/font_size = 31
+text = "SPOIN!!!"

@@ -1,10 +1,21 @@
 using Godot;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 public partial class Main : Node2D
 {
+	private BetMængde betMængde;
+
+	private Label Balance;
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		betMængde = GetNode<BetMængde>("Bet_Amount"); // Henter værdien fra betmængde noden
+		Balance = GetNode<Label>("Balance"); // Gør så vi kan 
+		base._Ready();
+		cardPrefab = ResourceLoader.Load("res://cards.tscn") as PackedScene;
+		InstantiateCards();
+	}
 	// Called when the node enters the scene tree for the first time.
 
 	private int[] talArray; //opretter et array af typen int
@@ -20,17 +31,30 @@ public partial class Main : Node2D
 
 	}
 
-	public override void _Ready()
-	{
-		base._Ready();
-		cardPrefab = ResourceLoader.Load("res://cards.tscn") as PackedScene;
-		InstantiateCards();
-	}
-
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 	}
+
+	public void _on_spin_pressed()
+	{
+		GD.Print("!!!!SPIIINNNN!!!!!");
+		
+		GD.Print("Din balance er: "+Balance.Text); // GD.Print værdien fra balance
+		GD.Print("Din betmængde er: "+betMængde.Text); // GD.Print værdien fra Betmængde
+
+		GD.Print(betMængde.checkBet()); // GD.Print værdien fra checkBet
+
+		if (int.Parse(Balance.Text) >= int.Parse(betMængde.Text)) // Hvis balance er større eller lig med betmængde
+		{
+			GD.Print("Du har nok penge til at spille"); // GD.Print at du har nok penge til at spille
+		}
+		else if (int.Parse(Balance.Text) < int.Parse(betMængde.Text)) // Hvis balance er mindre end betmængde
+		{
+			GD.Print("Du har ikke nok penge til at spille"); // GD.Print at du ikke har nok penge til at spille
+		}
+	}
+
 	private PackedScene cardPrefab;
 
 	private void InstantiateCards()
