@@ -10,6 +10,8 @@ public partial class Main : Node2D
 
 	private Label Balance;
 
+	private Godot.Timer timer;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -19,6 +21,7 @@ public partial class Main : Node2D
 		cardPrefab = ResourceLoader.Load("res://cards.tscn") as PackedScene;
 		InstantiateCards();
 		floorPrefab = ResourceLoader.Load("res://floor.tscn") as PackedScene;
+		timer = GetNode<Godot.Timer>("Timer");
 		//SletFloor();
 	}
 	// Called when the node enters the scene tree for the first time.
@@ -143,5 +146,10 @@ public partial class Main : Node2D
 	{
 		StaticBody2D gulv = floorPrefab.Instantiate() as StaticBody2D;
 		AddChild(gulv);
+	}
+	private void _on_timer_timeout()
+	{
+		GD.Print("Timeren er gået");
+		MakeFloor();
 	}
 }
