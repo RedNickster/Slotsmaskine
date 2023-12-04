@@ -13,7 +13,10 @@ script = ExtResource("1_icmx7")
 [node name="Node2D2" parent="." instance=ExtResource("2_0dbhb")]
 position = Vector2(757, 577)
 
-[node name="Bet_Amount" parent="." instance=ExtResource("2_0dbhb")]
+[node name="Node2D2" parent="." instance=ExtResource("2_0dbhb")]
+position = Vector2(757, 577)
+
+
 offset_left = 985.0
 offset_top = 363.0
 offset_right = 1032.0
@@ -24,7 +27,7 @@ visible = false
 
 [node name="Floor" parent="." instance=ExtResource("3_xy7dv")]
 
-[node name="Balance" parent="." instance=ExtResource("5_fke0j")]
+[node name="Node2D" parent="." instance=ExtResource("5_fke0j")]
 
 [node name="Spin" parent="." instance=ExtResource("4_8mscc")]
 offset_left = 960.0
