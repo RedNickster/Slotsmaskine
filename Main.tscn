@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://datwny6fgu14h"]
+[gd_scene load_steps=7 format=3 uid="uid://datwny6fgu14h"]
 
 [ext_resource type="Script" path="res://Main.cs" id="1_icmx7"]
 [ext_resource type="PackedScene" uid="uid://bx4fu3a3x1hcu" path="res://Bet_amount.tscn" id="2_0dbhb"]
-[ext_resource type="PackedScene" uid="uid://bksfc1ak81j3u" path="res://cards.tscn" id="2_a4nik"]
-[ext_resource type="PackedScene" uid="uid://btki25lo3wqok" path="res://floor.tscn" id="3_xy7dv"]
-[ext_resource type="PackedScene" uid="uid://cstdhge8clb4" path="res://Balance.tscn" id="5_fke0j"]
+[ext_resource type="PackedScene" path="res://cards.tscn" id="2_a4nik"]
+[ext_resource type="PackedScene" path="res://floor.tscn" id="3_xy7dv"]
+[ext_resource type="PackedScene" uid="uid://bdm76mmdn40q7" path="res://SpinKnap.tscn" id="4_8mscc"]
+[ext_resource type="PackedScene" path="res://Balance.tscn" id="5_fke0j"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_icmx7")
 
 [node name="Node2D2" parent="." instance=ExtResource("2_0dbhb")]
-position = Vector2(757, 577)
+offset_left = 985.0
+offset_top = 363.0
+offset_right = 1032.0
+offset_bottom = 389.0
 
 [node name="Cards" parent="." instance=ExtResource("2_a4nik")]
 visible = false
@@ -18,3 +22,11 @@ visible = false
 [node name="Floor" parent="." instance=ExtResource("3_xy7dv")]
 
 [node name="Node2D" parent="." instance=ExtResource("5_fke0j")]
+
+[node name="Spin" parent="." instance=ExtResource("4_8mscc")]
+offset_left = 960.0
+offset_top = 474.0
+offset_right = 1098.0
+offset_bottom = 575.0
+
+[connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]

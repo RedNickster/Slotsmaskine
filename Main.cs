@@ -10,8 +10,8 @@ public partial class Main : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		betMængde = GetNode<BetMængde>("Betmængde"); // Henter værdien fra betmængde noden
-		Balance = GetNode<Label>("Node2D"); // Gør så vi kan 
+		betMængde = GetNode<BetMængde>("Bet_Amount"); // Henter værdien fra betmængde noden
+		Balance = GetNode<Label>("Balance"); // Gør så vi kan 
 		base._Ready();
 		cardPrefab = ResourceLoader.Load("res://cards.tscn") as PackedScene;
 		InstantiateCards();
