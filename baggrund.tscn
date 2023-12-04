@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://btbboytthuf25"]
-
-[ext_resource type="Texture2D" uid="uid://dnoqjavsh88et" path="res://pixil-frame-0 (2).png" id="1_1ga2l"]
-
-[node name="Baggrund" type="Sprite2D"]
-position = Vector2(576, 323.5)
-scale = Vector2(0.667826, 0.66359)
-texture = ExtResource("1_1ga2l")
