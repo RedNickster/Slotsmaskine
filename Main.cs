@@ -1,5 +1,8 @@
 using Godot;
 using System;
+using System.Data.Common;
+using System.Threading;
+using System.Threading.Tasks;
 
 public partial class Main : Node2D
 {
@@ -15,6 +18,8 @@ public partial class Main : Node2D
 		base._Ready();
 		cardPrefab = ResourceLoader.Load("res://cards.tscn") as PackedScene;
 		InstantiateCards();
+		floorPrefab = ResourceLoader.Load("res://floor.tscn") as PackedScene;
+		//SletFloor();
 	}
 	// Called when the node enters the scene tree for the first time.
 
@@ -53,6 +58,10 @@ public partial class Main : Node2D
 		{
 			GD.Print("Du har ikke nok penge til at spille"); // GD.Print at du ikke har nok penge til at spille
 		}
+		RemoveFloor();
+		MakeFloor();
+		DeleteCards();
+		InstantiateCards();
 	}
 
 	private PackedScene cardPrefab;
@@ -85,9 +94,6 @@ public partial class Main : Node2D
 		}
 		CheckConnects(talArray);
 	}
-
-
-
 	private void CheckConnects(int[] array)
 	{
 		int gridSize = 3;
@@ -108,5 +114,34 @@ public partial class Main : Node2D
 				}
 			}
 		}
+	}
+	private void DeleteCards()
+	{
+		
+		//GD.Print("Lav nye kort");
+		foreach (Node node in GetChildren())
+		{
+			if (node is cards)
+			{
+				node.QueueFree();
+			}
+		}
+		
+	}
+	private PackedScene floorPrefab;
+	private void RemoveFloor()
+	{
+		foreach (Node node in GetChildren())
+		{
+			if (node is StaticBody2D)
+			{
+				node.QueueFree();
+			}
+		}
+	}
+	private void MakeFloor()
+	{
+		StaticBody2D gulv = floorPrefab.Instantiate() as StaticBody2D;
+		AddChild(gulv);
 	}
 }

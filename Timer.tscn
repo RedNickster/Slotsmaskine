@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://ya7ta7r1317g"]
+
+[node name="Timer" type="Timer"]
