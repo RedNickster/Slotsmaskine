@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://datwny6fgu14h"]
+[gd_scene load_steps=6 format=3 uid="uid://datwny6fgu14h"]
 
 [ext_resource type="Script" path="res://Main.cs" id="1_icmx7"]
 [ext_resource type="PackedScene" uid="uid://bx4fu3a3x1hcu" path="res://Bet_amount.tscn" id="2_0dbhb"]
@@ -9,6 +9,9 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_icmx7")
+
+[node name="Node2D2" parent="." instance=ExtResource("2_0dbhb")]
+position = Vector2(757, 577)
 
 [node name="Bet_Amount" parent="." instance=ExtResource("2_0dbhb")]
 offset_left = 985.0
