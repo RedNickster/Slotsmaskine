@@ -11,6 +11,8 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_icmx7")
 
+[node name="Baggrund" parent="." instance=ExtResource("2_4ntdx")]
+
 [node name="Bet_Amount" parent="." instance=ExtResource("2_0dbhb")]
 offset_left = 985.0
 offset_top = 363.0
