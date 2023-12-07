@@ -30,6 +30,7 @@ offset_right = 1098.0
 offset_bottom = 575.0
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

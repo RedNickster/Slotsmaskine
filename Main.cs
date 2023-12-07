@@ -22,7 +22,6 @@ public partial class Main : Node2D
 		InstantiateCards();
 		floorPrefab = ResourceLoader.Load("res://floor.tscn") as PackedScene;
 		timer = GetNode<Godot.Timer>("Timer");
-		//SletFloor();
 	}
 	// Called when the node enters the scene tree for the first time.
 
@@ -62,9 +61,6 @@ public partial class Main : Node2D
 			GD.Print("Du har ikke nok penge til at spille"); // GD.Print at du ikke har nok penge til at spille
 		}
 		RemoveFloor();
-		MakeFloor();
-		DeleteCards();
-		InstantiateCards();
 	}
 
 	private PackedScene cardPrefab;
@@ -129,7 +125,6 @@ public partial class Main : Node2D
 				node.QueueFree();
 			}
 		}
-		
 	}
 	private PackedScene floorPrefab;
 	private void RemoveFloor()
@@ -141,15 +136,20 @@ public partial class Main : Node2D
 				node.QueueFree();
 			}
 		}
+		// Tænd timeren
+		// når timer færdig kald MakeFloor, sluk timer, DeleteCards, InstantiateCards
+		timer.Start();
 	}
 	private void MakeFloor()
 	{
 		StaticBody2D gulv = floorPrefab.Instantiate() as StaticBody2D;
 		AddChild(gulv);
 	}
-	private void _on_timer_timeout()
+	public void _on_timer_timeout()
 	{
-		GD.Print("Timeren er gået");
 		MakeFloor();
+		timer.Stop();
+		DeleteCards();
+		InstantiateCards();
 	}
 }
